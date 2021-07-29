@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            background-image: url("street_night_silhouettes_196749_3840x2160.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contain{
+            height: 300px;
+            width: 400px;
+            background-color: white;
+            opacity: 0.8;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px 5px;
+        }
+        #question{
+            font-size: 25px;
+            padding-top: 8px;
+            padding-left: 8px;
+        }
+        #ans{
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+
+        }
+        button{
+            border: none;
+            border-radius: 4px;
+            background-color: blueviolet;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover{
+            background-image: linear-gradient(blue,purple);
+        }
+        .answ{
+            border: none;
+            border-radius: 4px;
+            background-color: blueviolet;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+        .opt{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 40%;
+        }
+        .next{
+            position: absolute;
+            top: 80%;
+        }
+        .next button{
+            background-color: rgb(29, 28, 28);
+        }
+        .score{
+            position: absolute;
+            left: 87%;
+            top: 5%;
+            background-color: black;
+            color: white;
+            font-size: 30px;
+            padding: 10px;
+        
+        }
+        .result{
+            padding-left: 30%;
+            padding-top: 10%;
+        }
+        .result .scr{
+            margin: 20px;
+        }
+        .hide{
+            display: none;
+        }
+        .correct{
+            background-color: green;
+        }
+        .wrong{
+            background-color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="contain ">
+        <div class="ques hide">
+            <div id="question">Who is sister of Thor and Loki?</div>
+            <div id="ans">
+                <button class="answ" id="1" value="Valkyrie" onclick="firstclick()">Valkyrie</button>
+                <button class="answ" id="2"value="Hela" onclick="secclick()">Hela</button>
+                <button class="answ" id="3" value="Sif" onclick="thirclick()">Sif</button>
+                <button class="answ" id="4" value="Wanda" onclick="fourthclick()">Wanda</button>
+            </div>
+        </div>
+        <div class="opt">
+            <button id="start-btn">Start</button>
+        </div>
+        <div class="result hide">
+            <h1>SCORE:</h1>
+            <h1 id="finalscore">0</h1>
+            <button id="restart">Restart</button>
+        </div>
+    </div>
+    <div class="next hide">
+        <button>Next</button>
+    </div>
+    <div class="score">
+        <span>Score: </span>
+        <span id="scr">0</span>
+    </div>
+
+    <script src="quizjs.js"></script>
+</body>
+</html>
